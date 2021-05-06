@@ -85,7 +85,8 @@ function Commands(props) {
                 <div className='commands-search-wrapper'>
                     <img className='commands-search-icon' src={Search} alt='search-icon'/>
                     <input className='commands-search' placeholder='Search for a command...' onChange={(e) => {
-                        setSearch(e.target.value)
+                        const search = e.target.value
+                        setSearch(search)
                         
                         // getting results with search query in it
                         const filtered = Object.keys(all_commands).filter((command) => command.includes(search))
