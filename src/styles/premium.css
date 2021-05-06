@@ -1,0 +1,25 @@
+.premium-title {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.premium-desc {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    display: block;
+    width: 75%;
+    margin: 20px auto;
+}
+
+@media only screen and (max-width: 550px) {
+    .premium-title {
+        font-size: 15vw;
+    }
+
+    .premium-desc {
+        width: 90%;
+    }
+}
