@@ -56,6 +56,8 @@
     font-size: 20px;
     outline: none;
     margin-left: 10px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .commands-divider {
@@ -63,16 +65,55 @@
     border: 1px rgb(68, 116, 138) solid;
 }
 
+.commands-category-dropdown-wrapper {
+    display: none;
+    position: relative;
+    margin: 0 auto;
+}
+
+.commands-category-dropdown {
+
+    background-color: rgb(35, 92, 119);
+    color: white;
+    font-family: Inter, sans-serif;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+@media only screen and (max-width: 750px) {
+    .commands-category {
+        display: none;
+    }
+
+    .commands-category-dropdown-wrapper {
+        display: block;
+    }
+
+    .commands-search-wrapper {
+        margin: 20px auto;
+        border: none;
+        justify-content: center;
+    }
+
+    .commands-search-icon {
+        display: inline-block;
+        width: 40px;
+        margin-left: 10px;
+    }
+    
+    .commands-search {
+        font-size: 7vw;
+    }
+
+    .commands-search-icon {
+        width: 10%;
+    }
+}
+
 @media only screen and (max-width: 550px) {
     .commands-title {
         font-size: 10vw;
-    }
-
-
-}
-
-@media only screen and (max-width: 850px) {
-    .command-box {
-        width: 95%;
     }
 }

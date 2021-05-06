@@ -40,9 +40,6 @@
     top: 7px;
 
     transition: all 150ms;
-    -o-transition: all 150ms;
-    -moz-transition: all 150ms;
-    -webkit-transition: all 150ms;
 }
 
 .invite-button:hover {

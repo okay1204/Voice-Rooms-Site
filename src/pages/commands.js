@@ -55,6 +55,8 @@ function Commands(props) {
             <h1 className='commands-title'>Commands</h1>
 
             <div className='commands-category-container'>
+
+                {/* normal buttons */}
                 {Object.keys(commands).map((category) => (
                     <button
                         className={`commands-category ${category === current_category && !search ? 'commands-category-active' : ''}`}
@@ -66,6 +68,18 @@ function Commands(props) {
                         {category.charAt(0).toUpperCase() + category.slice(1)}
                     </button>
                 ))}
+
+                {/* mobile selector */}
+                <div className='commands-category-dropdown-wrapper'>
+                    <select className='commands-category-dropdown' name = 'options' value={current_category} onChange = {(e) => {
+                        setCategory(e.target.value)
+                        setSearch('')
+                    }}>
+                        {Object.keys(commands).map(
+                            (name) => (<option value = {name}>{name.charAt(0).toUpperCase() + name.slice(1)}</option>)
+                        )}
+                    </select>
+                </div>
 
                 <div className='commands-search-wrapper'>
                     <img className='commands-search-icon' src={Search} alt='search-icon'/>
