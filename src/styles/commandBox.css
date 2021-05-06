@@ -10,13 +10,9 @@
 }
 
 .command-name {
+    display: block;
     color: white;
     font-size: 25px;
-}
-
-.command-prefix {
-    font-size: 15px;
-    color:rgb(129, 133, 134);
 }
 
 .command-desc {

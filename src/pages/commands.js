@@ -53,6 +53,7 @@ function Commands(props) {
             </Helmet>
 
             <h1 className='commands-title'>Commands</h1>
+            <span className='commands-prefix-title'>Prefix: <code className='commands-prefix'>vc.</code></span>
 
             <div className='commands-category-container'>
 

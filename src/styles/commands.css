@@ -5,6 +5,21 @@
     text-transform: uppercase;
 }
 
+.commands-prefix-title {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.commands-prefix {
+    font-family: 'Source Code Pro', monospace;;
+    background-color: rgb(0, 0, 0);
+    padding: 3px;
+    border-radius: 10px;
+}
+
 .commands-category-container {
     width: fit-content;
     margin: 0 auto;
@@ -115,5 +130,9 @@
 @media only screen and (max-width: 550px) {
     .commands-title {
         font-size: 10vw;
+    }
+
+    .commands-prefix-title {
+        font-size: 8vw;
     }
 }
