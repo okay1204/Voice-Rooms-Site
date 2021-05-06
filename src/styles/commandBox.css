@@ -1,0 +1,25 @@
+.command-box {
+    font-family: Inter, sans-serif;
+    text-align: left;
+    background-color: #151c1f;
+    border-radius: 10px;
+    width: 60%;
+    padding: 10px;
+    border: 1px #2f4650 solid;
+    margin: 20px auto;
+}
+
+.command-name {
+    color: white;
+    font-size: 25px;
+}
+
+.command-prefix {
+    font-size: 15px;
+    color:rgb(129, 133, 134);
+}
+
+.command-desc {
+    color: rgb(219, 219, 219);
+    font-size: 20px;
+}

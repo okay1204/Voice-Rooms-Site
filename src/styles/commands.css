@@ -63,34 +63,6 @@
     border: 1px rgb(68, 116, 138) solid;
 }
 
-.command-box {
-    font-family: Inter, sans-serif;
-    text-align: left;
-    background-color: #151c1f;
-    border-radius: 10px;
-    width: 60%;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px #2f4650 solid;
-    margin: 20px auto;
-}
-
-.command-name {
-    color: white;
-    font-size: 25px;
-}
-
-.command-prefix {
-    font-size: 15px;
-    color:rgb(129, 133, 134);
-    
-}
-
-.command-desc {
-    color: rgb(219, 219, 219);
-    font-size: 20px;
-}
-
 @media only screen and (max-width: 550px) {
     .commands-title {
         font-size: 10vw;

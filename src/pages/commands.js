@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import '../styles/commands.css'
 import Search from '../images/search.png'
+import CommandBox from '../components/commandBox.js'
 
 const commands = {
     'info': {
@@ -40,15 +41,7 @@ function Commands(props) {
     const command_elements = []
     for (const [key, value] of Object.entries(commands[current_category])) {
         command_elements.push(
-            <div className='command-box'>
-                <div className='command-name-wrapper'>
-                    <span className='command-prefix'>vc.</span><span className='command-name'>{key}</span>
-                </div>
-                <span className='command-desc'>
-                    {value}
-                </span>
-
-            </div>
+            <CommandBox name={key} desc={value}/>
         )
     }
 
@@ -84,7 +77,10 @@ function Commands(props) {
                         // sort it by character length
                         filtered.sort((a, b) => a.length - b.length)
 
-                        
+                        setSearchResults(filtered.map((name) => (
+                            <CommandBox name={name} desc={all_commands[name]}/>
+                        )))
+
                     }} value={search}/>
                 </div>
             </div>
