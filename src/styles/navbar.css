@@ -1,0 +1,189 @@
+.navbar {
+    overflow: hidden;
+    display: flex;
+    background-color: #23272a;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    padding: 20px;
+    max-width: 120px;
+    height: auto;
+}
+
+.navbar-pages {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-page {
+    text-decoration: none;
+    padding: 20px;
+    
+    margin: 0 20px;
+
+    font-size: 25px;
+    font-family: Inter, sans-serif;
+
+    transition: color ease-in 150ms;
+
+    transition: transform ease-in-out 150ms;
+}
+
+.navbar-page::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 0%;
+    background-color: white;
+    
+    transition: width ease-in-out 150ms;
+    
+    bottom: 0;
+    left: 0;
+}
+
+.navbar-page:hover::before {
+    width: 100%;
+}
+
+.navbar-page:not(.active) {
+    color: white;
+
+    transform: scale(1, 1);
+}
+
+.navbar-page:hover,
+.active {
+    color: lightblue;
+    
+    transform: scale(1.25, 1.25);;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.invite-now-button {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 0 20px;
+    font-size: 25px;
+    border: white 1px solid;
+    border-radius: 10px;
+
+    transition: background-color 150ms;
+}
+
+.invite-now-button:hover {
+    background-color: rgb(75, 75, 75);
+}
+
+.help-button img {
+    display: block;
+    padding: 20px;
+    max-width: 80px;
+    height: auto;
+
+    filter: brightness(100%);
+    -webkit-filter: brightness(100%);
+    -ms-filter: brightness(100%);
+
+    transition: all ease-in-out 250ms;
+}
+
+.help-button img:hover {
+    filter: brightness(70%);
+
+    transform: rotate(20deg);
+}
+
+.mobile-navbar-arrow {
+    display: none;
+    max-width: 80px;
+    padding: 20px;
+
+    /* getting rid of all button styling */
+    background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.mobile-navbar-arrow img {
+    width: 100%;
+
+    transition: transform ease 100ms;
+}
+
+.mobile-nav-menu {
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+
+    background-color: #23272a;
+
+    width: 95%;
+    max-height: 0;
+    overflow: hidden;
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    top: 100px;
+    z-index: 50;
+
+    transition: max-height ease-in-out 150ms;
+}
+
+.mobile-nav-menu a {
+    display: block;
+}
+
+.mobile-nav-menu .navbar-page:hover::before {
+    width: 0%;
+}
+
+@media only screen and (max-width: 950px) {
+    .navbar-pages {
+        display: none;
+    }
+
+    .logo {
+        max-width: 100px;
+        padding-right: 0;
+    }
+    
+    .help-button img {
+        display: block;
+        max-width: 80px;
+        height: auto;
+    }
+
+    .mobile-navbar-arrow {
+        display: block;
+    }
+    
+}
+
+@media only screen and (max-width: 450px) {
+    .navbar-invite-button {
+        display: none;
+    }
+}

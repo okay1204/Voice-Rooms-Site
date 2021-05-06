@@ -1,0 +1,28 @@
+.footer {
+    display: flex;
+    align-items: center;
+    background-color: #161616;
+    padding: 20px;
+}
+
+.footer a {
+    display: block;
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 20px;
+
+    transition: background-color 150ms;
+}
+
+.footer a:hover {
+    background-color: #494949;
+}
+
+.footer a img {
+    max-width: 100%;
+}
+
+.footer h2 {
+    color: white;
+    font-family: Montserrat, sans-serif;
+}

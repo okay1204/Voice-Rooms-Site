@@ -1,0 +1,55 @@
+.invite-button-wrapper {
+    position: relative;
+    width: 150px;
+}
+
+.invite-button {
+    text-transform: uppercase;
+    display: block;
+    width: 150px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    border: white 1px solid;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    z-index: 20;
+    position: absolute;
+    background-color: #1a2327;
+    bottom: 0;
+    left: 0;
+
+    transition: background-color 150ms;
+}
+
+.invite-button-backbox {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    border: white 1px solid;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    z-index: 0;
+    position: relative;
+    left: 5px;
+    top: 7px;
+
+    transition: all 150ms;
+    -o-transition: all 150ms;
+    -moz-transition: all 150ms;
+    -webkit-transition: all 150ms;
+}
+
+.invite-button:hover {
+    background-color: #29434e;
+}
+
+.invite-button:hover ~ .invite-button-backbox {
+    left: 0;
+    top: 0;
+}
