@@ -1,0 +1,45 @@
+.thanks-title {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.thanks-desc {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 40px;
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.thanks-desc a {
+    color: #5bbfec;
+    text-decoration: none;
+}
+
+.thanks-desc a:hover {
+    text-decoration: underline;
+}
+
+.thanks-dancing-kid-wrapper {
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+}
+
+.thanks-dancing-kid {
+    width: 100%;
+}
+
+@media only screen and (max-width: 550px) {
+    .thanks-title {
+        font-size: 30px;
+    }
+
+    .thanks-desc {
+        font-size: 20px;
+        width: 90%;
+    }
+}

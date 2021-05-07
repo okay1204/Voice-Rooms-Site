@@ -2,6 +2,7 @@ import parseRoutes from './utils/parser.js'
 import Home from './pages/home.js'
 import Commands from './pages/commands.js'
 import Premium from './pages/premium.js'
+import Thanks from './pages/thanks.js'
 import Help from './pages/help.js'
 
 const routes = [
@@ -15,7 +16,13 @@ const routes = [
     },
     {
         path: '/premium',
-        component: Premium
+        component: Premium,
+        subRoutes: [
+            {
+                path: '/thanks',
+                component: Thanks
+            }
+        ]
     },
     {
         path: '/help',
