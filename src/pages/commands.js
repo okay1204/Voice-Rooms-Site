@@ -21,7 +21,7 @@ const commands = {
         'defaultname name': 'Sets the default name of a room when it is created. If you put {name} in the room name, it will be replaced with the member\'s name.'
     },
     'premium': {
-        'e': 'e'
+        
     }
 }
 
