@@ -11,7 +11,8 @@ const commands = {
         'about': 'Displays general information about the bot.',
         'promo': 'Provides info on other creations that I\'ve made.',
         'invite': 'Gives an invite link to add the bot.',
-        'news': 'Latest news on the bot whether it be updates, announcements, or tokens of gratitude!'
+        'news': 'Latest news on the bot whether it be updates, announcements, or tokens of gratitude!',
+        'website': 'Sends a link to Voice Room\'s website.'
     },
     'settings': {
         'status': 'Checks if all channels and permissions are set up correctly. If all three have a check mark, you\'re good to go.',
