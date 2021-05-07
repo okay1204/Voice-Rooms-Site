@@ -1,8 +1,9 @@
 import './App.css';
 import routes from './routes';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavBar from './components/navbar'
-import Footer from './components/footer'
+import NavBar from './components/navbar.js'
+import Footer from './components/footer.js'
+import NotFound from './pages/notFound.js'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 )}
                 />
             ))}
+            <Route component={NotFound} />
           </Switch>
 
       <Footer />

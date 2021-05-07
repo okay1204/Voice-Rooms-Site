@@ -1,0 +1,59 @@
+#notfound-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notfound-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notfound-text-wrapper {
+    width: 60%;
+    margin: 20px;
+}
+
+.notfound-title {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.notfound-desc {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 40px;
+    text-transform: uppercase; 
+}
+
+.notfound-image-wrapper {
+    max-width: 300px;
+    margin: 20px;
+}
+
+.notfound-image {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .notfound-flex {
+        flex-direction: column;
+    }
+
+    .notfound-text-wrapper {
+        width: 95%;
+        margin: 5px;
+    }
+
+    .notfound-title {
+        font-size: 10vw;
+    }
+    
+    .notfound-desc {
+        font-size: 6vw;
+    }
+}
