@@ -47,10 +47,11 @@ function Premium() {
                                     Authorization: 'Bearer ' + process.env.REACT_APP_VOICEROOMS_API_KEY
                                 }
                             }
-                        )
+                        ).then(() => {
+                            // redirect to thank you page afterwards
+                            setRedirect(true)
+                        })
 
-                        // redirect to thank you page afterwards
-                        setRedirect(true)
                     }}
                 />
             </div>
