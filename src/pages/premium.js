@@ -21,17 +21,6 @@ function Premium() {
                 Be sure to check out this page once premium has released!
             </p>
 
-            <div className='paypal-buttons'>
-                <PayPalButton 
-                    amount='5.00'
-                    currency='USD'
-                    shippingPreference='NO_SHIPPING'
-                    onSuccess={(details, data) => {
-                        console.log(details, data)
-                    }}
-                />
-            </div>
-
         </div>
     )
 }
