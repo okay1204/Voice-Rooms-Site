@@ -6,7 +6,7 @@ import React from 'react'
 
 function Premium() {
 
-    const paypal_client_id = process.env.NODE_ENV === 'development' ? 'AWiiB-0YMKU75CURJJVmpP41WAd4Akc5GgZ3G7ZPunumFGoCO60f0RC83JFJE6R7ngfBfylFYpVaChuy' : 'AY0Whw-7DWlhKjGt5DTHYyMViTDhy5ATHFeBevkx6Wjb29g2oh_ATjkBFN0ERfSQZwZ7ZI9u5X3_CMTJ'
+    const paypal_client_id = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_PAYPAL_SANDBOX_ID : process.env.REACT_APP_PAYPAL_LIVE_ID
 
     const [redirect, setRedirect] = React.useState(false)
 
