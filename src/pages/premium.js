@@ -3,7 +3,6 @@ import '../styles/premium.css'
 import { PayPalButton } from "react-paypal-button-v2"
 import { Redirect } from 'react-router-dom'
 import React from 'react'
-import axios from 'axios'
 
 function Premium() {
 
@@ -33,25 +32,27 @@ function Premium() {
                         clientId: paypal_client_id
                     }}
                     custom_id='yes'
-                    onSuccess={(details, data) => {
-
-                        // add discord id to response and then send to api
-
-                        details['discord_id'] = 69420
-                        console.log(details)
-                        axios.post(
-                            'https://api.voicerooms.app/purchase',
-                            details,
-                            {
-                                headers: {
-                                    Authorization: 'Bearer ' + process.env.REACT_APP_VOICEROOMS_API_KEY
+                    createOrder={(data, actions) => (
+                        actions.order.create({
+                            intent: 'CAPTURE',
+                            purchase_units: [
+                                {
+                                    amount: {
+                                        value: '5.00'
+                                    },
+                                    description: 'Voice Rooms premium credits to access premium features.',
+                                    custom_id: 69420 // NOTE change this to discord id
                                 }
+                            ],
+                            application_context: {
+                                'brand_name': 'Voice Rooms',
+                                'shipping_preference': 'NO_SHIPPING'
                             }
-                        ).then(() => {
-                            // redirect to thank you page afterwards
-                            setRedirect(true)
                         })
-
+                    )}
+                    onApprove={(data, actions) => {
+                        // redirect to thank you page afterwards
+                        setRedirect(true)
                     }}
                 />
             </div>
