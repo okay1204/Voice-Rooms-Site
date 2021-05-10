@@ -16,7 +16,7 @@
     text-transform: uppercase;
     animation: glow 1s ease-in-out infinite alternate;
 
-    margin: 0
+    margin: 0;
 }
 
 .premium-subtitle {
@@ -29,6 +29,7 @@
 .purchase-section {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     bottom: 100px;
     width: 75%;
@@ -39,16 +40,85 @@
     background-color: #191e20;
 }
 
+.purchase-top {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    
+    justify-content: space-between;
+    width: 100%;
+}
+
+.purchase-title-wrapper {
+    color: white;
+    text-align: left;
+}
+
+.purchase-title {
+    font-size: 30px;
+    margin-bottom: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.purchase-subtitle {
+    color: rgb(219, 219, 219);
+    margin-top: 0;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+}
+
+.purchase-quantity-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.purchase-quantity-slider {
+    width: 100%;
+    appearance: none;
+    height: 25px;
+    background: #343738;
+    border-radius: 10px;
+    outline: none;
+    transition: opacity .2s;
+}
+
+.quantity-display {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.purchase-quantity-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #0070ba;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform ease-out 100ms;
+}
+
+.purchase-quantity-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.5, 1.5);
+    box-shadow: 0 0 10px 10px #609aad;
+}
+
+.purchase-bottom {
+    width: 100%;
+}
+
 .paypal-buttons {
     width: 90%;
     margin: 0 auto;
 }
 
-.premium-pricing {
+.purchase-pricing {
     color: white;
     font-family: Montserrat, sans-serif;
-    font-size: 50px;
+    font-size: 70px;
     text-transform: uppercase;
+    margin-top: 30px;
 }
 
 @keyframes glow {
@@ -60,12 +130,15 @@
     }
 }
 
-@media only screen and (max-width: 550px) {
-    .premium-title {
-        font-size: 15vw;
+@media only screen and (max-width: 1100px) {
+
+    .purchase-top {
+        display: flex;
+        flex-direction: column;
     }
 
-    .premium-desc {
-        width: 90%;
+    .purchase-title,
+    .purchase-subtitle {
+        text-align: center;
     }
 }

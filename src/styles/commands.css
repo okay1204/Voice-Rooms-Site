@@ -87,7 +87,7 @@
 }
 
 .commands-category-dropdown {
-
+    appearance: none;
     background-color: rgb(35, 92, 119);
     color: white;
     font-family: Inter, sans-serif;
