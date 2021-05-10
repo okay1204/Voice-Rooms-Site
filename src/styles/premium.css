@@ -1,22 +1,63 @@
+.premium-gradient {
+    background: linear-gradient(rgb(58, 133, 133) ,rgb(3, 252, 252));
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin-bottom: 20px;
+}
+
 .premium-title {
     color: white;
     font-family: Montserrat, sans-serif;
-    font-size: 60px;
+    font-size: 120px;
+    text-transform: uppercase;
+    animation: glow 1s ease-in-out infinite alternate;
+
+    margin: 0
+}
+
+.premium-subtitle {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
     text-transform: uppercase;
 }
 
-.premium-desc {
-    color: white;
-    font-family: Montserrat, sans-serif;
-    font-size: 20px;
-    display: block;
+.purchase-section {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    bottom: 100px;
     width: 75%;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    border: 10px rgb(10, 136, 136) double;
+    background-color: #191e20;
 }
 
 .paypal-buttons {
     width: 90%;
     margin: 0 auto;
+}
+
+.premium-pricing {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px rgb(41, 136, 214), 0 0 30px rgb(41, 136, 214), 0 0 40px rgb(41, 136, 214), 0 0 50px rgb(41, 136, 214), 0 0 60px rgb(41, 136, 214), 0 0 70px rgb(41, 136, 214);
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #00c2db, 0 0 40px #00c2db, 0 0 50px #00c2db, 0 0 60px #00c2db, 0 0 70px #00c2db, 0 0 80px #00c2db;
+    }
 }
 
 @media only screen and (max-width: 550px) {
