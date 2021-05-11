@@ -37,7 +37,7 @@ function Premium() {
                     </div>
                     <div className='purchase-quantity-wrapper'>
                         <span className='quantity-display'>{quantity} Credit{quantity !== 1 && 's'}</span>
-                        <input className="purchase-quantity-slider" type="range" min="1" max="10" value={quantity} onChange={(e) => {setQuantity(e.target.value)}}/>
+                        <input className="purchase-quantity-slider" type="range" min="1" max="10" defaultValue={quantity} onChange={(e) => {setQuantity(parseInt(e.target.value))}}/>
                     </div>
                     <h3 className='purchase-pricing'>${quantity * parseFloat(credit_cost)}</h3>
                 </div>

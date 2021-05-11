@@ -24,6 +24,7 @@
     font-family: Montserrat, sans-serif;
     font-size: 30px;
     text-transform: uppercase;
+    margin: 0 5px;
 }
 
 .purchase-section {
@@ -109,7 +110,7 @@
 }
 
 .paypal-buttons {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -132,6 +133,10 @@
 
 @media only screen and (max-width: 1100px) {
 
+    .purchase-section {
+        width: 95%;
+    }
+
     .purchase-top {
         display: flex;
         flex-direction: column;
@@ -140,5 +145,11 @@
     .purchase-title,
     .purchase-subtitle {
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .premium-title {
+        font-size: 18vw;
     }
 }
