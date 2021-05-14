@@ -85,8 +85,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     width: 70px;
     height: 70px;
+    transition: background-color ease-in 200ms;
+}
+
+.discord-login:hover {
+    background-color: #373d42;
+    animation: 500ms ease-in-out 0s spin; 
+}
+
+.discord-avatar img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.discord-avatar {
+    margin-left: 30px;
+    margin-right: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .help-button img {
@@ -159,7 +188,7 @@
     width: 0%;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1050px) {
     .navbar-pages {
         display: none;
     }
@@ -186,7 +215,8 @@
         display: none;
     }
 
-    .discord-login {
+    .discord-login,
+    .discord-avatar {
         margin-left: 0;
     }
 

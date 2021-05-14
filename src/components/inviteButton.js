@@ -1,5 +1,7 @@
 import '../styles/inviteButton.css'
-import invite_url from '../constants.js';
+import constants from '../constants.js'
+
+const { invite_url } = constants;
 
 function InviteButton(props) {
 

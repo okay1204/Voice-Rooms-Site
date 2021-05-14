@@ -5,6 +5,10 @@ import RightArrow from '../images/right arrow.png'
 import React from 'react'
 import InviteButton from '../components/inviteButton.js'
 import DiscordLogo from '../images/discord logo.png'
+import constants from '../constants'
+
+const { discord_auth_url } = constants
+
 
 const links = {
     Home: '/',
@@ -78,7 +82,11 @@ class NavBar extends React.Component {
 
                 <div className='navbar-right'>
                     <InviteButton className='navbar-invite-button'/>
-                    <a className='discord-login'><img src={DiscordLogo} /></a>
+                    {this.props.discord_user ? 
+                        <div className='discord-avatar'><img src={this.props.discord_user.avatar} /></div>
+                        : 
+                        <a className='discord-login' href={discord_auth_url}><img src={DiscordLogo} /></a>
+                    }
                     <a className='help-button' href='/help'><img src={Help} alt='help'/></a>
                 </div>
             </div>
