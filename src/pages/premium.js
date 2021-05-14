@@ -10,7 +10,7 @@ function Premium() {
 
     const paypal_client_id = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_PAYPAL_SANDBOX_ID : process.env.REACT_APP_PAYPAL_LIVE_ID
 
-    const [redirect, setRedirect] = React.useState(false)
+    const [redirect, setRedirect] = React.useState(null)
     const [quantity, setQuantity] = React.useState(1)
 
     const total_cost = (parseFloat(credit_cost) * quantity) + '.00'
@@ -18,7 +18,7 @@ function Premium() {
     return (
         <div id='premium-body' className='body'>
 
-            {redirect && <Redirect to='/premium/thanks' />}
+            {redirect && <Redirect to={redirect} />}
 
             <Helmet>
                 <title>Voice Rooms • Premium</title>
@@ -92,8 +92,9 @@ function Premium() {
                                 })
                             )}
                             onApprove={(data, actions) => {
+
                                 // redirect to thank you page afterwards
-                                setRedirect(true)
+                                setRedirect(`/premium/thanks?order_id=${data.orderID}`)
                             }}
                         />
                     </div>

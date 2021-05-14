@@ -29,6 +29,15 @@
     margin: 20px auto;
 }
 
+.thanks-order-id {
+    display: block;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    margin: 40px 10px;
+    word-break: break-all;
+}
+
 .thanks-dancing-kid {
     width: 100%;
 }
