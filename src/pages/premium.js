@@ -90,7 +90,7 @@ function Premium() {
                                         'shipping_preference': 'NO_SHIPPING'
                                     }
                                 })
-                                )}
+                            )}
                             onApprove={(data, actions) => {
                                 // redirect to thank you page afterwards
                                 setRedirect(true)

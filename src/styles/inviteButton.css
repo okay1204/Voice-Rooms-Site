@@ -6,6 +6,7 @@
 .invite-button {
     text-transform: uppercase;
     display: block;
+    font-family: Inter, sans-serif;
     width: 150px;
     text-decoration: none;
     color: white;

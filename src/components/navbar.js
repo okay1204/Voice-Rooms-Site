@@ -3,7 +3,8 @@ import Logo from '../images/logo.png'
 import Help from '../images/help.png'
 import RightArrow from '../images/right arrow.png'
 import React from 'react'
-import InviteButton from '../components/inviteButton.js';
+import InviteButton from '../components/inviteButton.js'
+import DiscordLogo from '../images/discord logo.png'
 
 const links = {
     Home: '/',
@@ -77,6 +78,7 @@ class NavBar extends React.Component {
 
                 <div className='navbar-right'>
                     <InviteButton className='navbar-invite-button'/>
+                    <a className='discord-login'><img src={DiscordLogo} /></a>
                     <a className='help-button' href='/help'><img src={Help} alt='help'/></a>
                 </div>
             </div>
