@@ -6,7 +6,7 @@ import React from 'react'
 
 function Premium() {
 
-    const credit_cost = '5.00'
+    const credit_cost = '10.00'
 
     const paypal_client_id = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_PAYPAL_SANDBOX_ID : process.env.REACT_APP_PAYPAL_LIVE_ID
 
