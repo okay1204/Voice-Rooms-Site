@@ -67,7 +67,7 @@ class NavBar extends React.Component {
 
         switch (this.props.discord_user) {
             case null:
-                discord_element = <a className='discord-login' href={discord_auth_url}><img src={DiscordLogo} alt='Discord Login'/></a>
+                discord_element = <a className='discord-login' href={discord_auth_url(this.props.cookies.discord_prompt)}><img src={DiscordLogo} alt='Discord Login'/></a>
                 break
             case undefined:
                 discord_element = <div className='discord-loading'><img src={LoadingWheel} alt='Loading Wheel'/></div>
@@ -114,7 +114,9 @@ class NavBar extends React.Component {
                                     cookies.remove('discord_access_token')
                                 }
 
-                                window.location.reload(true)
+                                cookies.set('discord_prompt', 'consent')
+
+                                window.location.reload()
                             }}>
                                 Log Out
                             </button>

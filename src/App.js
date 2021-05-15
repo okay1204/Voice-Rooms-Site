@@ -11,7 +11,7 @@ import { useCookies } from 'react-cookie'
 
 function App(props) {
 
-  const [cookies, setCookie, removeCookie] = useCookies(['discord_access_token'])
+  const [cookies, setCookie, removeCookie] = useCookies(['discord_access_token', ['discord_prompt']])
 
   // parsing url hash
   let url = Url(window.location.href)
@@ -53,6 +53,8 @@ function App(props) {
             expires: next_week
           })
         }
+
+        setCookie('discord_prompt', 'none')
   
         const data = response.data
         
