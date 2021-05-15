@@ -5,6 +5,7 @@ import RightArrow from '../images/right arrow.png'
 import React from 'react'
 import InviteButton from '../components/inviteButton.js'
 import DiscordLogo from '../images/discord logo.png'
+import LoadingWheel from '../images/loading wheel.gif'
 import constants from '../constants'
 
 const { discord_auth_url } = constants
@@ -60,6 +61,21 @@ class NavBar extends React.Component {
             )
         }
 
+        let discord_element = null
+
+
+        switch (this.props.discord_user) {
+            case null:
+                discord_element = <a className='discord-login' href={discord_auth_url}><img src={DiscordLogo} alt='Discord Login'/></a>
+                break
+            case undefined:
+                discord_element = <div className='discord-loading'><img src={LoadingWheel} alt='Loading Wheel'/></div>
+                break
+            default:
+                discord_element = <div className='discord-avatar'><img src={this.props.discord_user.avatar} alt={this.props.discord_user + '\'s avatar'}/></div>
+                break
+        }
+
         /* eslint-disable */
         return (
             <div className='navbar'>
@@ -82,11 +98,9 @@ class NavBar extends React.Component {
 
                 <div className='navbar-right'>
                     <InviteButton className='navbar-invite-button'/>
-                    {this.props.discord_user ? 
-                        <div className='discord-avatar'><img src={this.props.discord_user.avatar} /></div>
-                        : 
-                        <a className='discord-login' href={discord_auth_url}><img src={DiscordLogo} /></a>
-                    }
+                    
+                    {discord_element}
+
                     <a className='help-button' href='/help'><img src={Help} alt='help'/></a>
                 </div>
             </div>

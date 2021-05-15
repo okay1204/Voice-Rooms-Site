@@ -7,8 +7,11 @@ import NotFound from './pages/notFound.js'
 import React from 'react'
 import axios from 'axios'
 import Url from 'url-parse'
+import { useCookies } from 'react-cookie'
 
 function App(props) {
+
+  const [cookies, setCookie] = useCookies(['discord_access_token'])
 
   // parsing url hash
   let url = Url(window.location.href)
@@ -23,23 +26,38 @@ function App(props) {
     })
   }
 
+  // undefined means loading, null means not logged in
+  const [discord_user, setDiscordUser] = React.useState(undefined)
+  
+  // if there wasn't any direct login, check for any cookies instead
+  if (discord_user === undefined) {
 
-  const [discord_user, setDiscordUser] = React.useState(null)
-
-  if (url_hash.token_type === 'Bearer') {
-
-    axios.get('https://discord.com/api/v8/users/@me', {
-      headers: {
-        Authorization: 'Bearer ' + url_hash.access_token
-      }
-    })
-    .then((response) => {
-      
-      const data = response.data
-
-      data.avatar = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`
-      setDiscordUser(data)
-    })
+    if (url_hash.token_type === 'Bearer' || cookies.discord_access_token) {
+      const access_token = url_hash.access_token || cookies.discord_access_token
+  
+      axios.get('https://discord.com/api/v8/users/@me', {
+        headers: {
+          Authorization: 'Bearer ' + access_token
+        }
+      })
+      .then((response) => {
+  
+        // set new cookie if needed
+        if (!cookies.discord_access_token) {
+          setCookie('discord_access_token', url_hash.access_token, {
+            maxAge: url_hash.expires_in
+          })
+        }
+  
+        const data = response.data
+        
+        data.avatar = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`
+        setDiscordUser(data)
+      })
+    }
+    else {
+      setDiscordUser(null)
+    }
   }
 
   return (
