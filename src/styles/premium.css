@@ -122,6 +122,41 @@
     margin-top: 30px;
 }
 
+.purchase-discord-title {
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+}
+
+.purchase-discord-login-button {
+    background-color: #5865F2;
+    border: none;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 20px;
+    text-decoration: none;
+
+    transition: all ease 100ms;
+}
+
+.purchase-discord-login-button:hover {
+    background-color: #3a46c7;
+    transform: scale(1.1, 1.1);
+}
+
+.purchase-discord-logo {
+    width: 50px;
+    margin-right: 20px;
+}
+
+
 @keyframes glow {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px rgb(41, 136, 214), 0 0 30px rgb(41, 136, 214), 0 0 40px rgb(41, 136, 214), 0 0 50px rgb(41, 136, 214), 0 0 60px rgb(41, 136, 214), 0 0 70px rgb(41, 136, 214);
@@ -151,5 +186,16 @@
 @media only screen and (max-width: 700px) {
     .premium-title {
         font-size: 18vw;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .purchase-discord-login-button {
+        flex-direction: column;
+    }
+    
+    .purchase-discord-logo {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }

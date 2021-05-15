@@ -6,9 +6,9 @@ import React from 'react'
 import InviteButton from '../components/inviteButton.js'
 import DiscordLogo from '../images/discord logo.png'
 import LoadingWheel from '../images/loading wheel.gif'
-import constants from '../constants'
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
+import constants from '../constants'
 
 const { discord_auth_url } = constants
 

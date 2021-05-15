@@ -83,7 +83,7 @@ function App(props) {
             path={route.path}
             exact
             component={props => (
-            <route.component {...props} />
+            <route.component {...props} discord_user={discord_user}/>
             )}
             />
           ))}
