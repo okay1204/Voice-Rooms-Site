@@ -9,7 +9,7 @@ const params = {
     client_id: '760552758532243466',
     scope: 'identify',
     redirect_uri: 'https://www.voicerooms.app/',
-    prompt: 'consent'
+    prompt: 'none'
 }
 
 for (const [key, value] of Object.entries(params)) {

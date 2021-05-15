@@ -7,6 +7,8 @@ import InviteButton from '../components/inviteButton.js'
 import DiscordLogo from '../images/discord logo.png'
 import LoadingWheel from '../images/loading wheel.gif'
 import constants from '../constants'
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
 
 const { discord_auth_url } = constants
 
@@ -19,14 +21,17 @@ const links = {
 
 class NavBar extends React.Component {
 
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+
     constructor(props) {
         super(props)
     
         this.state = {
-            mobileMenu: false
+            mobileMenu: false,
+            discordMenu: false
         }
-
-        this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     }
 
     checkMobileMenu = () => {
@@ -41,10 +46,6 @@ class NavBar extends React.Component {
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.checkMobileMenu);
-    }
-
-    toggleMobileMenu() {
-        this.setState({mobileMenu: !this.state.mobileMenu})
     }
 
     render() {
@@ -72,7 +73,7 @@ class NavBar extends React.Component {
                 discord_element = <div className='discord-loading'><img src={LoadingWheel} alt='Loading Wheel'/></div>
                 break
             default:
-                discord_element = <div className='discord-avatar'><img src={this.props.discord_user.avatar} alt={this.props.discord_user + '\'s avatar'}/></div>
+                discord_element = <div className='discord-avatar' onClick={() => {this.setState({discordMenu: !this.state.discordMenu, mobileMenu: false})}}><img src={this.props.discord_user.avatar} alt={this.props.discord_user.username + '\'s avatar'}/></div>
                 break
         }
 
@@ -85,7 +86,7 @@ class NavBar extends React.Component {
                     <a href='/'><img src={Logo} className='logo' alt='Logo'/></a>
 
                     {/* Mobile nav */}
-                    <button className='mobile-navbar-arrow' onClick={this.toggleMobileMenu}><img src={RightArrow} style={this.state.mobileMenu ? {transform: 'rotate(90deg)'} : {}}/></button>
+                    <button className='mobile-navbar-arrow' onClick={() => {this.setState({mobileMenu: !this.state.mobileMenu, discordMenu: false})}}><img src={RightArrow} style={this.state.mobileMenu ? {transform: 'rotate(90deg)'} : {}}/></button>
                     <div className='mobile-nav-menu' style={this.state.mobileMenu ? {maxHeight: '300px'} : {}}>
                         {page_links}
                     </div>
@@ -101,6 +102,25 @@ class NavBar extends React.Component {
                     
                     {discord_element}
 
+                    {
+                        // Discord Menu
+                        this.props.discord_user &&
+                        <div className='discord-menu' style={this.state.discordMenu ? {maxHeight: '100px', padding: '20px'} : {}}>
+                            <span className='discord-name'>{this.props.discord_user.username}#{this.props.discord_user.discriminator}</span>
+                            <button className='discord-logout' onClick={() => {
+                                const { cookies } = this.props;
+
+                                if (cookies.get('discord_access_token')) {
+                                    cookies.remove('discord_access_token')
+                                }
+
+                                window.location.reload(true)
+                            }}>
+                                Log Out
+                            </button>
+                        </div>
+                    }
+
                     <a className='help-button' href='/help'><img src={Help} alt='help'/></a>
                 </div>
             </div>
@@ -108,4 +128,4 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar
+export default withCookies(NavBar)
