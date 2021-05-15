@@ -11,7 +11,7 @@ import { useCookies } from 'react-cookie'
 
 function App(props) {
 
-  const [cookies, setCookie] = useCookies(['discord_access_token'])
+  const [cookies, setCookie, removeCookie] = useCookies(['discord_access_token'])
 
   // parsing url hash
   let url = Url(window.location.href)
@@ -41,11 +41,16 @@ function App(props) {
         }
       })
       .then((response) => {
+
+        const now = new Date()
+        const next_week = new Date()
+        next_week.setDate(now.getDate() + 7)
   
         // set new cookie if needed
         if (!cookies.discord_access_token) {
           setCookie('discord_access_token', url_hash.access_token, {
-            maxAge: url_hash.expires_in
+            maxAge: url_hash.expires_in,
+            expires: next_week
           })
         }
   
@@ -53,6 +58,11 @@ function App(props) {
         
         data.avatar = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`
         setDiscordUser(data)
+      })
+      .catch((error) => {
+        if (error.response.status === 401 && cookies.discord_access_token) {
+          removeCookie('discord_access_token')
+        }
       })
     }
     else {
