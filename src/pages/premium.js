@@ -6,6 +6,7 @@ import React from 'react'
 import DiscordLogo from '../images/discord logo white.png'
 import constants from '../constants'
 import { useCookies } from 'react-cookie'
+import LoadingWheel from '../images/loading wheel.gif'
 
 const { discord_auth_url } = constants
 
@@ -21,6 +22,87 @@ function Premium(props) {
     const [quantity, setQuantity] = React.useState(1)
 
     const total_cost = (parseFloat(credit_cost) * quantity) + '.00'
+
+    let purchase_element = null
+
+    switch (props.discord_user) {
+        case undefined:
+            purchase_element = <img className='purchase-loading-wheel' src={LoadingWheel} alt='Loading'/>
+            break
+        
+        case null:
+            purchase_element = (
+                <div className='purchase-discord-login'>
+                    <h3 className='purchase-discord-title'>You must be logged in with Discord to purchase premium credits!</h3>
+                    <a className='purchase-discord-login-button' href={discord_auth_url(cookies.discord_prompt)}>
+                        <img src={DiscordLogo} className='purchase-discord-logo' alt='Log in with discord'/>
+                        Log in with Discord
+                    </a>
+                </div>
+            )
+            break
+
+        default:
+            purchase_element = (
+                <div className='paypal-buttons'>
+                    <PayPalButton 
+                        amount='5.00'
+                        currency='USD'
+                        shippingPreference='NO_SHIPPING'
+                        options={{
+                            clientId: paypal_client_id
+                        }}
+                        style={{
+                            color: 'blue'
+                        }}
+                        custom_id='yes'
+                        createOrder={(data, actions) => (
+                            actions.order.create({
+                                intent: 'CAPTURE',
+                                purchase_units: [
+                                    {
+                                        amount: {
+                                            currency_code: 'USD',
+                                            value: total_cost,
+                                            breakdown: {
+                                                item_total: {
+                                                    currency_code: 'USD',
+                                                    value: total_cost
+                                                }
+                                            }
+                                        },
+                                        description: 'Voice Rooms premium credits to access premium features.',
+                                        soft_descriptor: 'PREMIUM CREDIT',
+                                        items: [
+                                            {
+                                                name: 'Premium Credit',
+                                                unit_amount: {
+                                                    currency_code: 'USD',
+                                                    value: credit_cost
+                                                },
+                                                quantity: String(quantity),
+                                                description: 'Voice Romms premium credit to access premium features.'
+                                            }
+                                        ],
+                                        custom_id: props.discord_user.id
+                                    }
+                                ],
+                                application_context: {
+                                    'brand_name': 'Voice Rooms',
+                                    'shipping_preference': 'NO_SHIPPING'
+                                }
+                            })
+                        )}
+                        onApprove={(data, actions) => {
+
+                            // redirect to thank you page afterwards
+                            setRedirect(`/premium/thanks?order_id=${data.orderID}`)
+                        }}
+                    />
+                </div>
+            )
+            break
+    }
 
     return (
         <div id='premium-body' className='body'>
@@ -49,73 +131,7 @@ function Premium(props) {
                     <h3 className='purchase-pricing'>${quantity * parseFloat(credit_cost)}</h3>
                 </div>
                 <div className='purchase-bottom'>
-                    {
-                        props.discord_user ? 
-                        <div className='paypal-buttons'>
-                            <PayPalButton 
-                                amount='5.00'
-                                currency='USD'
-                                shippingPreference='NO_SHIPPING'
-                                options={{
-                                    clientId: paypal_client_id
-                                }}
-                                style={{
-                                    color: 'blue'
-                                }}
-                                custom_id='yes'
-                                createOrder={(data, actions) => (
-                                    actions.order.create({
-                                        intent: 'CAPTURE',
-                                        purchase_units: [
-                                            {
-                                                amount: {
-                                                    currency_code: 'USD',
-                                                    value: total_cost,
-                                                    breakdown: {
-                                                        item_total: {
-                                                            currency_code: 'USD',
-                                                            value: total_cost
-                                                        }
-                                                    }
-                                                },
-                                                description: 'Voice Rooms premium credits to access premium features.',
-                                                soft_descriptor: 'PREMIUM CREDIT',
-                                                items: [
-                                                    {
-                                                        name: 'Premium Credit',
-                                                        unit_amount: {
-                                                            currency_code: 'USD',
-                                                            value: credit_cost
-                                                        },
-                                                        quantity: String(quantity),
-                                                        description: 'Voice Romms premium credit to access premium features.'
-                                                    }
-                                                ],
-                                                custom_id: props.discord_user.id
-                                            }
-                                        ],
-                                        application_context: {
-                                            'brand_name': 'Voice Rooms',
-                                            'shipping_preference': 'NO_SHIPPING'
-                                        }
-                                    })
-                                )}
-                                onApprove={(data, actions) => {
-
-                                    // redirect to thank you page afterwards
-                                    setRedirect(`/premium/thanks?order_id=${data.orderID}`)
-                                }}
-                            />
-                        </div>
-                        :
-                        <div className='purchase-discord-login'>
-                            <h3 className='purchase-discord-title'>You must be logged in with Discord to purchase premium credits!</h3>
-                            <a className='purchase-discord-login-button' href={discord_auth_url(cookies.discord_prompt)}>
-                                <img src={DiscordLogo} className='purchase-discord-logo' alt='Log in with discord'/>
-                                Log in with Discord
-                            </a>
-                        </div>
-                    }
+                    {purchase_element}
                 </div>
                 
             </div>

@@ -156,6 +156,10 @@
     margin-right: 20px;
 }
 
+.purchase-loading-wheel {
+    width: min(100%, 200px);
+}
+
 
 @keyframes glow {
     from {
