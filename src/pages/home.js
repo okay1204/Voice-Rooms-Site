@@ -43,7 +43,7 @@ function Home() {
 
                 <FeatureBox
                     title='Fully customizable'
-                    desc='Adjust voice room names, give privileges to members, toggle whether bots are counted, and much more with every update!'
+                    desc='Adjust voice room names, give privileges to members, toggle whether bots are counted, and much more with every update.'
                     image_src={Settings}
                     alt='Settings icon'
                 />

@@ -147,21 +147,21 @@ function Premium(props) {
             <div className='features-list'>
                 <FeatureBox 
                     title='Text Rooms'
-                    desc='Create temporary text channels that pair up with your voice channels!'
+                    desc='Create temporary text channels that pair up with your voice channels'
                     image_src={Hashtag}
                     alt='Text icon'
                 />
 
                 <FeatureBox 
                     title='Keep Alive'
-                    desc='Set a duration of time for your voice channels to remain before being deleted!'
+                    desc='Set a duration of time for your voice channels to remain before being deleted'
                     image_src={Timer}
                     alt='Timer icon'
                 />
 
                 <FeatureBox 
                     title='Restricted Roles'
-                    desc='Control which roles are not allowed to create voice rooms!'
+                    desc='Control which roles are not allowed to create voice rooms'
                     image_src={Lock}
                     alt='Lock icon'
                 />
