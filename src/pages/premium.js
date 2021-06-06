@@ -38,7 +38,7 @@ function Premium(props) {
         case null:
             purchase_element = (
                 <div className='purchase-discord-login'>
-                    <h3 className='purchase-discord-title'>You must be logged in with Discord to purchase premium credits!</h3>
+                    <h3 className='purchase-discord-title'>You must be logged in with Discord to purchase premium credits</h3>
                     <a className='purchase-discord-login-button' href={discord_auth_url(cookies.discord_prompt)}>
                         <img src={DiscordLogo} className='purchase-discord-logo' alt='Log in with discord'/>
                         Log in with Discord
