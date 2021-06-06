@@ -7,6 +7,11 @@ import DiscordLogo from '../images/discord logo white.png'
 import constants from '../constants'
 import { useCookies } from 'react-cookie'
 import LoadingWheel from '../images/loading wheel.gif'
+import FeatureBox from '../components/featureBox.js'
+import Hashtag from '../images/hashtag.png'
+import Lock from '../images/lock.png'
+import Timer from '../images/timer.png'
+import CheckWithArrows from '../images/check with arrows.png'
 
 const { discord_auth_url } = constants
 
@@ -14,9 +19,9 @@ function Premium(props) {
 
     const [cookies] = useCookies(['discord_prompt'])
 
-    const credit_cost = '10.00'
+    const credit_cost = '5.00'
 
-    const paypal_client_id = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_PAYPAL_SANDBOX_ID : process.env.REACT_APP_PAYPAL_LIVE_ID
+    const paypal_client_id = process.env.NODE_ENV === 'development' ? 'AWiiB-0YMKU75CURJJVmpP41WAd4Akc5GgZ3G7ZPunumFGoCO60f0RC83JFJE6R7ngfBfylFYpVaChuy' : 'AY0Whw-7DWlhKjGt5DTHYyMViTDhy5ATHFeBevkx6Wjb29g2oh_ATjkBFN0ERfSQZwZ7ZI9u5X3_CMTJ'
 
     const [redirect, setRedirect] = React.useState(null)
     const [quantity, setQuantity] = React.useState(1)
@@ -134,6 +139,38 @@ function Premium(props) {
                     {purchase_element}
                 </div>
                 
+            </div>
+
+            <h4 className='premium-features-header'>Features</h4>
+
+            <div className='features-list'>
+                <FeatureBox 
+                    title='Text Rooms'
+                    desc='Create temporary text channels that pair up with your voice channels!'
+                    image_src={Hashtag}
+                    alt='Text icon'
+                />
+
+                <FeatureBox 
+                    title='Keep Alive'
+                    desc='Set a duration of time for your voice channels to remain before being deleted!'
+                    image_src={Timer}
+                    alt='Timer icon'
+                />
+
+                <FeatureBox 
+                    title='Restricted Roles'
+                    desc='Control which roles are not allowed to create voice rooms!'
+                    image_src={Lock}
+                    alt='Lock icon'
+                />
+
+                <FeatureBox 
+                    title='More to Come!'
+                    desc='This is only the start, more features are planned to be added to premium! Feel free to reach out in our support server for any suggestions!'
+                    image_src={CheckWithArrows}
+                    alt='Lock icon'
+                />
             </div>
 
 

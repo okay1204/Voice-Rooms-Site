@@ -19,10 +19,17 @@ const commands = {
         'create channel/category': 'Creates a voice channel to create rooms, or a category to put rooms in.',
         'giveperms on/off': 'Toggles whether or not room owners should have manage channel permissions on their room or not.',
         'ignorebots on/off': 'Toggles whethere or not bots will be ignored when deciding to delete voice rooms.',
-        'defaultname name': 'Sets the default name of a room when it is created. If you put {name} in the room name, it will be replaced with the member\'s name.'
+        'defaultname name': 'Sets the default name of a room when it is created. If you put {name} in the room name, it will be replaced with the member\'s name.',
+        '💎 create textcategory': 'Creates another category where text channels for voice rooms are created.',
+        '💎 keepalive 0m 0s': 'Sets the duration that channels will live after all members have left before deleting.',
+        '💎 restrictedroles add/remove role': 'Adds or removes roles from the list of restricted roles that cannot create voice rooms.'
     },
     'premium': {
-        
+        'premium check': 'Checks if the server has premium or not.',
+        'premium credits': 'Checks how many premium credits you own.',
+        'premium grant': 'Uses a premium credit to boost the server to premium! Does not consume your credit.',
+        'premium revoke': 'Revokes premium from the server and frees up a credit that you own.',
+        'premium purchase': 'Gives a link where you can purchase premium credits.'
     }
 }
 

@@ -160,6 +160,12 @@
     width: min(100%, 200px);
 }
 
+.premium-features-header {
+    font-family: Inter, sans-serif;
+    color: white;
+    font-size: 40px;
+}
+
 
 @keyframes glow {
     from {
