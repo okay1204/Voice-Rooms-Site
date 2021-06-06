@@ -45,7 +45,7 @@
     height: 5px;
     width: 0%;
     background-color: white;
-    
+    font-family: Montserrat, sans-serif;
     transition: width ease-in-out 150ms;
     
     bottom: 0;
@@ -74,20 +74,106 @@
     align-items: center;
 }
 
-.invite-now-button {
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-    margin: 0 20px;
-    font-size: 25px;
-    border: white 1px solid;
-    border-radius: 10px;
-
-    transition: background-color 150ms;
+.discord-login img {
+    width: 50px;
 }
 
-.invite-now-button:hover {
-    background-color: rgb(75, 75, 75);
+.discord-login {
+    margin-left: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    transition: background-color ease-in 200ms;
+}
+
+.discord-loading img {
+    width: 50px;
+}
+
+.discord-loading {
+    margin-left: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+}
+
+.discord-login:hover {
+    background-color: #373d42;
+    animation: 500ms ease-in-out 0s spin; 
+}
+
+.discord-avatar img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.discord-avatar {
+    margin-left: 30px;
+    margin-right: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+}
+
+.discord-avatar:hover {
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.discord-menu {
+    z-index: 10;
+    background-color: #212425;
+    position: absolute;
+    border-radius: 10px;
+    text-align: center;
+    top: 90px;
+    right: 50px;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height ease-in-out 150ms;
+    transition: padding ease-in-out 150ms;
+}
+
+.discord-name {
+    color: white;
+    display: block;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.discord-logout {
+    color: #ED4245;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.discord-logout:hover {
+    opacity: 0.5;
 }
 
 .help-button img {
@@ -160,7 +246,7 @@
     width: 0%;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1050px) {
     .navbar-pages {
         display: none;
     }
@@ -182,8 +268,27 @@
     
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 530px) {
     .navbar-invite-button {
         display: none;
+    }
+
+    .discord-login,
+    .discord-avatar {
+        margin-left: 0;
+    }
+
+    .discord-menu {
+        width: 90%;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 340px) {
+    .help-button img {
+        display: none
     }
 }
