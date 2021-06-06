@@ -55,8 +55,8 @@ function Premium(props) {
                         currency='USD'
                         shippingPreference='NO_SHIPPING'
                         options={{
-                            clientId: paypal_client_id,
-                            'disable-funding': 'credit,card'
+                            clientId: paypal_client_id
+                            // 'disable-funding': 'credit,card'
                         }}
                         style={{
                             color: 'blue'
