@@ -21,7 +21,7 @@ function Home() {
             <div className='banner-background'>
                 <div className='banner animate__bounce '>
                     <h1 className='banner-title'>Voice Rooms</h1>
-                    <h2 className='banner-subtext'>Join hundreds of users and tidy up your server with a new one-of-a-kind concept, voice rooms!</h2>
+                    <h2 className='banner-subtext'>Join thousands of users and tidy up your server with a new one-of-a-kind concept, voice rooms!</h2>
                     <InviteButton className='home-invite-button'/>
                 </div>
             </div>
