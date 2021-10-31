@@ -79,7 +79,7 @@ class NavBar extends React.Component {
 
         /* eslint-disable */
         return (
-            <div className='navbar'>
+            <nav className='navbar'>
 
 
                 <div className='navbar-left'>
@@ -125,7 +125,7 @@ class NavBar extends React.Component {
 
                     <a className='help-button' href='/help'><img src={Help} alt='help'/></a>
                 </div>
-            </div>
+            </nav>
         )
     }
 }

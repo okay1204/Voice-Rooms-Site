@@ -8,7 +8,7 @@ function Thanks(props) {
     const order_id = qs.parse(props.location.search, { ignoreQueryPrefix: true }).order_id
 
     return (
-        <div id='premium-body' className='body'>
+        <main id='premium-body' className='body'>
 
             <Helmet>
                 <title>Voice Rooms • Thank you</title>
@@ -27,7 +27,7 @@ function Thanks(props) {
                 <img className='thanks-dancing-kid' src={DancingKid} alt='Dancing kid'/>
             </div>
 
-        </div>
+        </main>
     )
 }
 

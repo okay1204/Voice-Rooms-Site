@@ -4,7 +4,7 @@ import SpaceMan from '../images/spaceman.jpg'
 
 function NotFound() {
     return(
-        <div id="notfound-body" className='body'>
+        <main id="notfound-body" className='body'>
 
             <Helmet>
                 <title>Voice Rooms • 404 Not Found</title>
@@ -19,7 +19,7 @@ function NotFound() {
                     <img className='notfound-image' src={SpaceMan} alt='Spaceman'/>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

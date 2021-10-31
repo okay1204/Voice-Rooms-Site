@@ -17,7 +17,7 @@ function Home() {
     const [demoActive, setDemoActive] = React.useState(false)
 
     return (
-        <div id='home-body' className='body'>
+        <main id='home-body' className='body'>
             <div className='banner-background'>
                 <div className='banner animate__bounce '>
                     <h1 className='banner-title'>Voice Rooms</h1>
@@ -61,7 +61,7 @@ function Home() {
                 <br />
                 <img className={`demo ${demoActive ? 'demo-active' : ''}`} src={Demo} alt='Voice rooms demo'/>
             </div>
-        </div>
+        </main>
     )
 }
 

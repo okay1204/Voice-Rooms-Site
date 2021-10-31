@@ -55,7 +55,7 @@ function Commands(props) {
     }
 
     return (
-        <div id='commands-body' className='body'>
+        <main id='commands-body' className='body'>
 
             <Helmet>
                 <title>Voice Rooms • Commands</title>
@@ -116,7 +116,7 @@ function Commands(props) {
                 {search ? search_results : command_elements}
             </div>
 
-        </div>
+        </main>
     )
 }
 

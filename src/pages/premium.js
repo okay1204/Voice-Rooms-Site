@@ -111,7 +111,7 @@ function Premium(props) {
     }
 
     return (
-        <div id='premium-body' className='body'>
+        <main id='premium-body' className='body'>
 
             {redirect && <Redirect to={redirect} />}
 
@@ -175,7 +175,7 @@ function Premium(props) {
             </div>
 
 
-        </div>
+        </main>
     )
 }
 

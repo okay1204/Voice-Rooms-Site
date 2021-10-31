@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 
 function Help() {
     return(
-        <div id="help-body" className='body'>
+        <main id="help-body" className='body'>
 
             <Helmet>
                 <title>Voice Rooms • RICKROLLED</title>
@@ -17,7 +17,7 @@ function Help() {
                 allowfullscreen=""
                 height="691">
             </iframe>
-        </div>
+        </main>
     )
 }
 
