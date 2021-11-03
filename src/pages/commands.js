@@ -19,7 +19,7 @@ const commands = {
         'create channel/category': 'Creates a voice channel to create rooms, or a category to put rooms in.',
         'giveperms on/off': 'Toggles whether or not room owners should have manage channel permissions on their room or not.',
         'ignorebots on/off': 'Toggles whethere or not bots will be ignored when deciding to delete voice rooms.',
-        'defaultname name': 'Sets the default name of a room when it is created. If you put {name} in the room name, it will be replaced with the member\'s name.',
+        'defaultname name': "Sets the default name of a room when it is created. Any occurrence of {name} and {nick} will be replaced with the member's username or server nickname, respectively.",
         'userlimit newlimit': 'Sets default user limit of created voice rooms.',
         '💎 create textcategory': 'Creates another category where text channels for voice rooms are created.',
         '💎 keepalive 0m 0s': 'Sets the duration that channels will live after all members have left before deleting.',
