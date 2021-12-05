@@ -1,11 +1,12 @@
 .footer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #161616;
     padding: 20px;
 }
 
-.footer a {
+.footer-logo-anchor {
     display: block;
     max-width: 250px;
     padding: 10px;
@@ -14,15 +15,37 @@
     transition: background-color 150ms;
 }
 
-.footer a:hover {
+.footer-logo-anchor:hover {
     background-color: #494949;
 }
 
-.footer a img {
+#footer-logo {
     max-width: 100%;
 }
 
 .footer h2 {
     color: white;
     font-family: Montserrat, sans-serif;
+}
+
+.footer-promos {
+    display: flex;
+    align-items: center;
+}
+
+.footer-promos * {
+    margin: 0 5px;
+    padding: 0;
+}
+
+@media only screen and (max-width: 720px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .footer-promos {
+        flex-direction: column;
+    }
 }
