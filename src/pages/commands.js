@@ -23,7 +23,8 @@ const commands = {
         'userlimit newlimit': 'Sets default user limit of created voice rooms.',
         '💎 create textcategory': 'Creates another category where text channels for voice rooms are created.',
         '💎 keepalive 0m 0s': 'Sets the duration that channels will live after all members have left before deleting.',
-        '💎 restrictedroles add/remove role': 'Adds or removes roles from the list of restricted roles that cannot create voice rooms.'
+        '💎 restrictedroles add/remove role': 'Adds or removes roles from the list of restricted roles that cannot create voice rooms.',
+        '💎 restrictedroles list': 'Lists all restricted roles.'
     },
     'premium': {
         'premium check': 'Checks if the server has premium or not.',
