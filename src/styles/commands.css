@@ -13,13 +13,6 @@
     margin-bottom: 20px;
 }
 
-.commands-prefix {
-    font-family: 'Source Code Pro', monospace;;
-    background-color: rgb(0, 0, 0);
-    padding: 3px;
-    border-radius: 10px;
-}
-
 .commands-category-container {
     width: fit-content;
     margin: 0 auto;

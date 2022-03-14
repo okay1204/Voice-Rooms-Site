@@ -4,7 +4,7 @@ import '../styles/commands.css'
 import Search from '../images/search.png'
 import CommandBox from '../components/commandBox.js'
 
-const commands = {
+const COMMANDS = {
     'info': {
         'tutorial': 'Gives step by step instructions on how to set up the bot.',
         'help': 'Displays a listing of available commands.',
@@ -36,7 +36,7 @@ const commands = {
 }
 
 const all_commands = {}
-Object.values(commands).forEach((commands_group) => {
+Object.values(COMMANDS).forEach((commands_group) => {
     for (const [key, value] of Object.entries(commands_group)) {
         all_commands[key] = value
     }
@@ -44,12 +44,12 @@ Object.values(commands).forEach((commands_group) => {
 
 function Commands(props) {
 
-    const [current_category, setCategory] = React.useState(Object.keys(commands)[0])
+    const [current_category, setCategory] = React.useState(Object.keys(COMMANDS)[0])
     const [search, setSearch] = React.useState('')
     const [search_results, setSearchResults] = React.useState([])
 
     const command_elements = []
-    for (const [key, value] of Object.entries(commands[current_category])) {
+    for (const [key, value] of Object.entries(COMMANDS[current_category])) {
         command_elements.push(
             <CommandBox name={key} desc={value}/>
         )
@@ -63,12 +63,12 @@ function Commands(props) {
             </Helmet>
 
             <h1 className='commands-title'>Commands</h1>
-            <span className='commands-prefix-title'>Prefix: <code className='commands-prefix'>vc.</code></span>
+            <span className='commands-prefix-title'>Now uses Slash Commands</span>
 
             <div className='commands-category-container'>
 
                 {/* normal buttons */}
-                {Object.keys(commands).map((category) => (
+                {Object.keys(COMMANDS).map((category) => (
                     <button
                         className={`commands-category ${category === current_category && !search ? 'commands-category-active' : ''}`}
                         onClick={() => {
@@ -86,7 +86,7 @@ function Commands(props) {
                         setCategory(e.target.value)
                         setSearch('')
                     }}>
-                        {Object.keys(commands).map(
+                        {Object.keys(COMMANDS).map(
                             (name) => (<option value = {name}>{name.charAt(0).toUpperCase() + name.slice(1)}</option>)
                         )}
                     </select>
