@@ -1,6 +1,6 @@
 import urlencode from 'urlencode'
 
-const invite_url = 'https://discord.com/api/oauth2/authorize?client_id=760552758532243466&permissions=16861200&scope=bot'
+const invite_url = 'https://discord.com/api/oauth2/authorize?client_id=760552758532243466&permissions=16861200&scope=bot%20applications.commands'
 
 let raw_discord_auth_url = 'https://discord.com/api/oauth2/authorize?'
 
