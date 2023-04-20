@@ -4,6 +4,8 @@ import Commands from './pages/commands.js'
 import Premium from './pages/premium.js'
 import Thanks from './pages/thanks.js'
 import Help from './pages/help.js'
+import TermsOfService from './pages/termsOfService.js'
+import PrivacyPolicy from './pages/privacyPolicy.js'
 
 const routes = [
     {
@@ -27,6 +29,14 @@ const routes = [
     {
         path: '/help',
         component: Help
+    },
+    {
+        path: '/terms-of-service',
+        component: TermsOfService
+    },
+    {
+        path: '/privacy-policy',
+        component: PrivacyPolicy
     }
 ]
 

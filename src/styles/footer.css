@@ -15,6 +15,19 @@
     transition: background-color 150ms;
 }
 
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+}
+
+.footer-legal-links a {
+    margin: 0 10px;
+    color: white;
+}
+
 .footer-logo-anchor:hover {
     background-color: #494949;
 }
@@ -41,6 +54,10 @@
 @media only screen and (max-width: 720px) {
     .footer {
         flex-direction: column;
+    }
+
+    .footer-legal-links {
+        margin-bottom: 20px;
     }
 }
 
