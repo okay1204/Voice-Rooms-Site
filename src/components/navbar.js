@@ -106,7 +106,7 @@ class NavBar extends React.Component {
                         // Discord Menu
                         this.props.discord_user &&
                         <div className='discord-menu' style={this.state.discordMenu ? {maxHeight: '100px', padding: '20px'} : {}}>
-                            <span className='discord-name'>{this.props.discord_user.username}#{this.props.discord_user.discriminator}</span>
+                            <span className='discord-name'>{this.props.discord_user.username}</span>
                             <button className='discord-logout' onClick={() => {
                                 const { cookies } = this.props;
 
