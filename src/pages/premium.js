@@ -1,17 +1,16 @@
-import { Helmet } from 'react-helmet'
-import '../styles/premium.css'
-import { PayPalButton } from "react-paypal-button-v2"
-import { Redirect } from 'react-router-dom'
 import React from 'react'
-import DiscordLogo from '../images/discord logo white.png'
-import constants from '../constants'
 import { useCookies } from 'react-cookie'
-import LoadingWheel from '../images/loading wheel.gif'
+import { Helmet } from 'react-helmet'
+import { Redirect } from 'react-router-dom'
 import FeatureBox from '../components/featureBox.js'
+import constants from '../constants'
+import CheckWithArrows from '../images/check with arrows.png'
+import DiscordLogo from '../images/discord logo white.png'
 import Hashtag from '../images/hashtag.png'
+import LoadingWheel from '../images/loading wheel.gif'
 import Lock from '../images/lock.png'
 import Timer from '../images/timer.png'
-import CheckWithArrows from '../images/check with arrows.png'
+import '../styles/premium.css'
 
 const { discord_auth_url } = constants
 
@@ -50,7 +49,8 @@ function Premium(props) {
         default:
             purchase_element = (
                 <div className='paypal-buttons'>
-                    <PayPalButton 
+                    <p className='temporarily-down'>Temporarily down :( <br /> Contact okay__ from the <a href='https://discord.gg/HTMKMhC' target='_blank' rel='noreferrer'>support server</a> if interested</p>
+                    {/* <PayPalButton 
                         amount='5.00'
                         currency='USD'
                         shippingPreference='NO_SHIPPING'
@@ -104,7 +104,7 @@ function Premium(props) {
                             // redirect to thank you page afterwards
                             setRedirect(`/premium/thanks?order_id=${data.orderID}`)
                         }}
-                    />
+                    /> */}
                 </div>
             )
             break
