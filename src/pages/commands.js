@@ -6,32 +6,28 @@ import CommandBox from '../components/commandBox.js'
 
 const COMMANDS = {
     'info': {
-        'tutorial': 'Gives step by step instructions on how to set up the bot.',
-        'help': 'Displays a listing of available commands.',
-        'about': 'Displays general information about the bot.',
-        'promo': 'Provides info on other creations that I\'ve made.',
-        'invite': 'Gives an invite link to add the bot.',
-        'news': 'Latest news on the bot whether it be updates, announcements, or tokens of gratitude.',
-        'website': 'Sends a link to Voice Room\'s website.'
+        'help': 'Displays a setup tutorial, and a list of commands with their descriptions.',
+        'news': 'Latest news from the Voice Rooms developer',
+        'about': 'Learn more about the bot and its features.',
+        'promo': 'Learn more about the developer behind Voice Rooms.',
+        'website': 'Provides a link to Voice Room\'s website.',
+        'invite': 'Provides an invite link to add the bot.',
+        'support': 'Provides an invite link to the Voice Room support server.'
     },
     'settings': {
-        'status': 'Checks if all channels and permissions are set up correctly. If all three have a check mark, you\'re good to go.',
-        'create channel/category': 'Creates a voice channel to create rooms, or a category to put rooms in.',
-        'giveperms on/off': 'Toggles whether or not room owners should have manage channel permissions on their room or not.',
-        'ignorebots on/off': 'Toggles whethere or not bots will be ignored when deciding to delete voice rooms.',
-        'defaultname name': "Sets the default name of a room when it is created. Any occurrence of {name} and {nick} will be replaced with the member's username or server nickname, respectively.",
-        'userlimit newlimit': 'Sets default user limit of created voice rooms.',
-        '💎 create textcategory': 'Creates another category where text channels for voice rooms are created.',
-        '💎 keepalive 0m 0s': 'Sets the duration that channels will live after all members have left before deleting.',
-        '💎 restrictedroles add/remove role': 'Adds or removes roles from the list of restricted roles that cannot create voice rooms.',
-        '💎 restrictedroles list': 'Lists all restricted roles.'
+        'create channel': 'Creates a voice channel for creating new voice rooms within a hall.',
+        'create category': 'Creates a category to put voice rooms in for a hall.',
+        '💎 create textcategory': 'Creates a category to put voice rooms in.',
+        'halls status': 'Checks if a hall is set up correctly.',
+        'halls create': "Creates a new hall.",
+        'halls delete': 'Deletes a hall.',
+        'halls rename': 'Renames a hall.',
+        'halls list': 'Lists all halls.',
+        'halls settings': 'View and adjust hall settings.',
     },
     'premium': {
-        'premium check': 'Checks if the server has premium or not.',
-        'premium credits': 'Checks how many premium credits you own.',
-        'premium grant': 'Uses a premium credit to boost the server to premium! Does not consume your credit.',
-        'premium revoke': 'Revokes premium from the server and frees up a credit that you own.',
-        'premium purchase': 'Gives a link where you can purchase premium credits.'
+        'premium check': 'Checks if this server has premium.',
+        'premium purchase': 'Provides a button to purchase premium.'
     }
 }
 

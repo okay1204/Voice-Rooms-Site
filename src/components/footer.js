@@ -2,7 +2,6 @@ import '../styles/footer.css'
 
 import WordLogo from '../images/word logo.png'
 import DigitalOcean from './digitalOcean.js';
-import PayPal from './payPal.js';
 
 function Footer() {
     return (
@@ -19,7 +18,6 @@ function Footer() {
 
             <div className='footer-promos'>
                 <DigitalOcean />
-                <PayPal />
             </div>
         </footer>
     )
