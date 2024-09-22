@@ -1,13 +1,10 @@
 import React from 'react'
 
-import '../styles/home.css'
-import InviteButton from '../components/inviteButton.js'
 import FeatureBox from '../components/featureBox.js'
+import InviteButton from '../components/inviteButton.js'
+import '../styles/home.css'
 
-import Voiceover from '../images/voiceover.png'
-import Settings from '../images/settings.png'
-import Customize from '../images/customize.png'
-import Support from '../images/support.png'
+import { faGear, faHeadset, faMicrophone, faWrench } from '@fortawesome/free-solid-svg-icons'
 
 import Demo from '../images/demo.gif'
 
@@ -30,29 +27,25 @@ function Home() {
                 <FeatureBox
                     title='No pointless empty channels'
                     desc='Create voice rooms only when users want to hang out, without the need of empty voice channels sitting around.'
-                    image_src={Voiceover}
-                    alt='Voiceover icon'
+                    icon={faMicrophone}
                 />
 
                 <FeatureBox
                     title='Breeze to set up'
                     desc='Easy-to-follow tutorial that will get voice rooms up and running in no time.'
-                    image_src={Customize}
-                    alt='Customize icon'
+                    icon={faWrench}
                 />
 
                 <FeatureBox
                     title='Fully customizable'
                     desc='Adjust voice room names, give privileges to members, toggle whether bots are counted, and much more with every update.'
-                    image_src={Settings}
-                    alt='Settings icon'
+                    icon={faGear}
                 />
 
                 <FeatureBox
                     title='Support'
                     desc='Dedicated support server for the bot, in case you need help, want to make a suggestion, or maybe just want to chat!'
-                    image_src={Support}
-                    alt='Support icon'
+                    icon={faHeadset}
                 />
             </div>
 

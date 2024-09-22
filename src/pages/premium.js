@@ -1,10 +1,7 @@
+import { faComment, faGamepad, faHashtag, faPlus, faStopwatch, faTimeline } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import FeatureBox from '../components/featureBox.js'
-import CheckWithArrows from '../images/check with arrows.png'
-import Hashtag from '../images/hashtag.png'
-import Lock from '../images/lock.png'
-import Timer from '../images/timer.png'
 import '../styles/premium.css'
 
 function Premium(props) {
@@ -35,43 +32,37 @@ function Premium(props) {
                 <FeatureBox 
                     title='Text Rooms'
                     desc='Create temporary text channels that pair up with your voice channels.'
-                    image_src={Hashtag}
-                    alt='Text icon'
+                    icon={faComment}
                 />
 
                 <FeatureBox 
                     title='Keep Alive'
                     desc='Set a duration for your voice channels to remain before being deleted.'
-                    image_src={Timer}
-                    alt='Timer icon'
+                    icon={faStopwatch}
                 />
 
                 <FeatureBox 
                     title='Room Numbers'
                     desc='Put an incrementing number in your voice room name. Ex. Room 1, Room 2, etc.'
-                    image_src={Lock}
-                    alt='Lock icon'
+                    icon={faHashtag}
                 />
 
                 <FeatureBox 
                     title='Activity Update'
                     desc='Have voice rooms automatically update their name to include member activity.'
-                    image_src={Lock}
-                    alt='Lock icon'
+                    icon={faGamepad}
                 />
 
                 <FeatureBox 
                     title='More Halls'
                     desc='Have up to 10 halls in your server for even more customization.'
-                    image_src={Lock}
-                    alt='Lock icon'
+                    icon={faPlus}
                 />
 
                 <FeatureBox 
                     title='More to Come!'
                     desc='More features are planned for premium. Feel free to reach out in our support server for any suggestions!'
-                    image_src={CheckWithArrows}
-                    alt='Lock icon'
+                    icon={faTimeline}
                 />
             </div>
 

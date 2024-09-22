@@ -1,9 +1,10 @@
 import '../styles/featureBox.css'
 
-import ScrollAnimation from 'react-animate-on-scroll'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'animate.css/animate.min.css'
+import ScrollAnimation from 'react-animate-on-scroll'
 
-function FeatureBox({title, desc, image_src, alt}) {
+function FeatureBox({title, desc, icon}) {
 
     const anchorText = 'support server'
     if (desc.includes(anchorText)) {
@@ -19,7 +20,7 @@ function FeatureBox({title, desc, image_src, alt}) {
             animateIn='animate__zoomIn animate__faster'
         >
             <div className='features-left'>
-                <img src={image_src} alt={alt}/>
+                <FontAwesomeIcon className='features-icon' icon={icon} />
             </div>
             <div className='features-right'>
                 <h3 className='features-list-title'>{title}</h3>

@@ -30,6 +30,11 @@
     border-radius: 50%;
 }
 
+.features-icon {
+    width: 30px;
+    height: 30px;
+}
+
 .features-right {
     padding-left: 20px;
 }
