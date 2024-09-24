@@ -1,10 +1,9 @@
 .features-list {
-    color: white;
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    gap: 10px;
 }
 
 .features-section {
@@ -13,8 +12,7 @@
     flex: 1 0 40%;
     display: flex;
     position: relative;
-    margin: 20px;
-    padding: 10px;
+    margin: 10px;
     justify-content: left;
     align-items: center;
     text-align: left;
@@ -25,7 +23,6 @@
 
 .features-left {
     padding: 20px;
-    margin-left: 20px;
     background-color: rgb(28, 62, 78);
     border-radius: 50%;
 }
@@ -59,9 +56,8 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .features-section {
+@media only screen and (max-width: 700px) {
+    .features-list {
         flex-direction: column;
-        text-align: center;
     }
 }

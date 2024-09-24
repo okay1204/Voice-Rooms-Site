@@ -101,6 +101,10 @@
     font-size: 40px;
 }
 
+.premium-features-list {
+    margin-bottom: 30px;
+}
+
 
 @keyframes glow {
     from {

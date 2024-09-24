@@ -28,7 +28,7 @@ function Premium(props) {
 
             <h4 className='premium-features-header'>Features</h4>
 
-            <div className='features-list'>
+            <div className='features-list premium-features-list'>
                 <FeatureBox 
                     title='Text Rooms'
                     desc='Create temporary text channels that pair up with your voice channels.'
