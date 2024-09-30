@@ -16,8 +16,8 @@ const COMMANDS = {
     },
     'settings': {
         'create channel': 'Creates a voice channel for creating new voice rooms within a hall.',
-        'create category': 'Creates a category to put voice rooms in for a hall.',
-        '💎 create textcategory': 'Creates a category to put voice rooms in.',
+        'create category': 'Creates a category for a hall to put voice rooms in.',
+        '💎 create textcategory': 'Creates a category for a hall to put premium text rooms in.',
         'halls status': 'Checks if a hall is set up correctly.',
         'halls create': "Creates a new hall.",
         'halls delete': 'Deletes a hall.',
